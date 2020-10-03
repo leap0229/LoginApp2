@@ -7,19 +7,33 @@
     <h1>Signup</h1>
     <form action="/users/signup" method="POST">
       <p>
-        Name<input type="text" id="username">
+        Name<input type="text" name="username" value=<%= username%>>
+        <% if (errorMessages['username']) { %>
+          <label><%= errorMessages['username'] %></label>
+        <% } %>
       </p>
       <p>
-        E-Mail Address<input type="email" id="email">
+        E-Mail Address<input type="email" name="email" value=<%= email%>>
+        <% if (errorMessages['email']) { %>
+          <label><%= errorMessages['email'] %></label>
+        <% } %>
       </p>
       <p>
-        Password<input type="password" id="password">
+        Password<input type="password" name="password">
+        <% if (errorMessages['password']) { %>
+          <label><%= errorMessages['password'] %></label>
+        <% } %>
       </p>
       <p>
-        Confirm Password<input type="password" id="con-password">
+        Confirm Password<input type="password" name="confirmPassword">
+        <% if (errorMessages['confirmPassword']) { %>
+          <label><%= errorMessages['confirmPassword'] %></label>
+        <% } %>
       </p>
       <input type="submit" value="Signup">
     </form>
+
+
   </div>
 </body>
 
